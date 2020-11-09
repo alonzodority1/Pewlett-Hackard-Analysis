@@ -18,7 +18,7 @@ ORDER BY emp_no;
 
 SELECT * FROM retirement_titles;
 
-DROP Table emp_titles;
+
 
 DROP TABlE Unique_titles;
 
@@ -29,17 +29,19 @@ title
 
 
 INTO Unique_titles
-FROM emp_titles
+FROM retirement_titles
 ORDER BY emp_no, to_date DESC;
 
-Select DISTINCT (title) FROM Unique_titles;
+Select DISTINCT * FROM Unique_titles;
 
 
 SELECT COUNT(emp_no), title
---INTO Retiring_Titles
+INTO Retiring_Titles
 FROM Unique_titles
 GROUP BY title
 ORDER BY COUNT DESC;
+
+SELECT * FROM Retiring_Titles;
 
 SELECT emp_no,First_name,last_name, birth_date
 FROM employees
@@ -49,10 +51,7 @@ FROM dept_emp;
 
 SELECT * FROM dept_emp;
 
-SELECT DISTINCT ON (emp_no) emp_no,first_name,
-last_name, birth_date
---INTO Unique_titles
-FROM employees;
+
 
 SELECT DISTINCT ON (emp_no) e.emp_no,
 		e.first_name,
@@ -61,14 +60,24 @@ SELECT DISTINCT ON (emp_no) e.emp_no,
       	d.from_date,
         d.to_date,
 		t.title
---INTO emp_titles
+INTO mentorship_eligibility
 FROM employees AS e
     INNER JOIN titles AS t
         ON (e.emp_no = t.emp_no)
 	INNER JOIN dept_emp as d
 		ON (e.emp_no= d.emp_no)
 
-WHERE (birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 AND (d.to_date = '9999-01-01')
 ORDER BY emp_no;
 
+SELECT COUNT(emp_no), title
+--INTO Retiring_Titles
+FROM mentorship_eligibility
+GROUP BY title
+ORDER BY COUNT DESC;
+
+
+SELECT * FROM retiring_titles;
+
+SELECT * FROM unique_titles;
