@@ -10,10 +10,10 @@ We have been given the task of determining the number of retiring employees per 
 ###  Large numbers of senior employees looking at retirement
 Close to 60k Senior Engineers and Staff looking to retire in the next few years.  These technical and administrative positions will need to be filled by current subordinates.  This will be a opportunity to focus on both talent and pipeline development
 
-### - Very few managers up for retirement 
+### Very few managers up for retirement 
 With only a few managers up for retirment business flow should remain stable as long as those managers remaining can handle the impending turnover of technical and administraive employees.  
 
-## - Mentorship to respond to up coming retirements
+## Mentorship to respond to up coming retirements
 
 ### Shortfall of employees to fill in gap of Silver Tsunami
 There is dramatic short fall of employees across titles, except managers, to cover the expected resource loss over the next few years.  
